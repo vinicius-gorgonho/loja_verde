@@ -1,4 +1,5 @@
 <?php
+namespace Application\core;
 
 class App{
     protected $controller = 'HomeController';
@@ -45,22 +46,22 @@ private function getParamsFromUrl($url){
     if(count($url) > 2){
         $this->params = array_slice($url, 2);
     }
-
-}
 }
 
-
-
-
-}
-
-
-
-
-}
+} // fim Class
 
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
 ?>
