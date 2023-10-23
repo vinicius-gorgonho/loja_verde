@@ -1,5 +1,9 @@
 <?php getcwd() ?>
-<?php include '../layout/menu.php' ?>
+<?php
+$base = __DIR__;
+include $base .'\..\layout\menu.php' 
+ 
+ ?>
 <html>
 <head>
 

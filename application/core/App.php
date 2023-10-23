@@ -12,12 +12,11 @@ class App{
         $this->getControllerFromUrl($URL_ARRAY);
         $this->getMethodFromUrl($URL_ARRAY);
         $this->getParamsFromUrl($URL_ARRAY);
-call_user_func_array([$this->controller, $this->method]
-, $this->params);    
+call_user_func_array([$this->controller, $this->method], $this->params);    
 }
 public function parseUrl(){
-$REQUEST_URI = explode('/',
- substr(filter_input(INPUT_SERVER, 'REQUEST_URI'), 1));
+$REQUEST_URI = explode('/', substr(filter_input(INPUT_SERVER, 'REQUEST_URI'), 1));
+return $REQUEST_URI;
 }
 public function getControllerFromUrl($url){
 if(!empty($url[0]) && isset($url[0])){
@@ -49,19 +48,3 @@ private function getParamsFromUrl($url){
 }
 
 } // fim Class
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
