@@ -4,7 +4,7 @@ namespace Application\core;
 class App{
     protected $controller = 'HomeController';
     protected $method = 'index';
-    protected $page404 = 'false';
+    protected $page404 = false;
     protected $params = [];
 
     public function __construct(){
