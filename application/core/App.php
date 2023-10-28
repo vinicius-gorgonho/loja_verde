@@ -1,13 +1,16 @@
 <?php
+
 namespace Application\core;
 
-class App{
+class App
+{
     protected $controller = 'HomeController';
     protected $method = 'index';
     protected $page404 = false;
     protected $params = [];
 
-    public function __construct(){
+    public function __construct()
+    {
         $URL_ARRAY = $this->parseUrl();
         $this->getControllerFromUrl($URL_ARRAY);
         $this->getMethodFromUrl($URL_ARRAY);
@@ -44,6 +47,4 @@ private function getParamsFromUrl($url){
     if(count($url) > 2){
         $this->params = array_slice($url, 2);
     }
-}
-
 } // fim Class

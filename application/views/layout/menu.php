@@ -1,15 +1,11 @@
 <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" 
-    href="/home/index">Início</a>
+    <a class="nav-link active" aria-current="page" href="/home/index">Início</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/produto/index">Produtos</a>
+    <a class="nav-link" href="/produto/"> Produto</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    <a class="nav-link" href="#"> Usuário </a>
   </li>
 </ul>
