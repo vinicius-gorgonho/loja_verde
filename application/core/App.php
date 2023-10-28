@@ -4,7 +4,7 @@ namespace Application\core;
 class App{
     protected $controller = 'HomeController';
     protected $method = 'index';
-    protected $page404 = 'false';
+    protected $page404 = false;
     protected $params = [];
 
     public function __construct(){
@@ -33,8 +33,7 @@ $this->controller = new $this->controller();
 }
 private function getMethodFromUrl($url){
 if(!empty($url[1]) && isset($url[1])){
- if(method_exists($this->controller, $url[1]
-  && !$this->page404)    ){
+ if(method_exists($this->controller, $url[1]) && !$this->page404)    {
         $this->method = $url[1];
  }else{
     $this->method = 'pageNotFound';

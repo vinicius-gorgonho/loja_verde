@@ -10,6 +10,8 @@
     use Application\core\App;
     use Application\core\Controller;
     $app = new App();
+
+   
     ?>
     </body>
 </html>

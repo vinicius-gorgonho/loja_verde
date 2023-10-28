@@ -1,7 +1,7 @@
 <?php
 
 class ProdutoDAO{
-
+   
     // Create (C)
     public function salvar($produto){}
     public function pegaTodos(){}
