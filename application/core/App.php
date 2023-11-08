@@ -48,3 +48,5 @@ private function getParamsFromUrl($url){
         $this->params = array_slice($url, 2);
     }
 } // fim Class
+
+}
