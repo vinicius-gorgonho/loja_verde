@@ -10,6 +10,7 @@ class ProdutoController extends Controller{
     public function cadastrar(){
         $this->view('produto/cadastrar');
     }
+
     public function salvar(){
         $nome = $_POST['nome_produto'];
         $marca = $_POST['marca'];
@@ -19,6 +20,20 @@ class ProdutoController extends Controller{
     }
     
 
+
+   public function cadastrar(){
+    $this->view('produto/cadastrar');
+   }
+
+   public function salvar(){
+    $nome = $_POST['nome_produto'];
+    $marca = $_POST['marca'];
+    print_r($nome);
+    print_r($marca);
+   }
+
+
+}
 
 
 ?>
