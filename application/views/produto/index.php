@@ -3,6 +3,7 @@ $base = __DIR__;
 include $base .'\..\layout\menu.php';
  
  ?>
+
 <html>
 <head>
 
@@ -12,6 +13,11 @@ include $base .'\..\layout\menu.php';
 
     <hr />
     <p> <a href="/produto/cadastrarProduto"> Adicionar Produto  </a> </p>
+
+
+    <a href="/produto/iniciarEditar/<?=$produto->getCodigo()?>"> EDITAR </a>
+    
+
+
 </body>
 </html>
-
