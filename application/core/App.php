@@ -30,8 +30,7 @@ if(file_exists('../Application/controllers/'
     $this->page404 = true;
  }
 }
-require_once '../Application/controllers/'. 
-$this->controller . '.php';
+require_once '../Application/controllers/'.$this->controller . '.php';
 $this->controller = new $this->controller();
 }
 private function getMethodFromUrl($url){
@@ -48,3 +47,4 @@ private function getParamsFromUrl($url){
         $this->params = array_slice($url, 2);
     }
 } // fim Class
+}

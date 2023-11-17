@@ -1,4 +1,5 @@
 <?php 
+namespace Application\models;
 class Produto{
     private $codigo;
     private $nome;
@@ -16,4 +17,7 @@ public function __construct($nome, $marca,$preco){
         return $this->codigo;
     }
     public function getNome(){return $this->nome;}
+
+    public function getMarca(){return $this->marca;}
+    public function getPreco(){return $this->preco;}
 }

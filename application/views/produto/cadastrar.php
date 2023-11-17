@@ -3,10 +3,20 @@ $base = __DIR__;
 include $base .'\..\layout\menu.php'; 
 //debug_print_backtrace();
  ?>
-<form action="/produto/salvar" method="POST">
+ <?php 
+    if(isset($data["msg"])){
+        echo "Sucesso";
+    }
+ ?>
+<form action="/produto/salvar" method="POST"
+ class="form-control">
     <label> Nome Produto </label>
-    <input type="text" name="nome_produto" />
-    <label> Marcar </label>
-    <input type="text" name="marca" />
-    <input type="submit" value="Cadastrar" />
+    <input type="text" name="nome_produto" 
+    class="form-control" />
+    <label> Marca </label>
+<input type="text" name="marca" class="form-control"/>
+<label> Preço </label>
+<input type="text" name="preco" class="form-control"/>
+    <input type="submit" value="Cadastrar"
+     class="form-control"/>
 </form>
