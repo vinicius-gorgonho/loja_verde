@@ -5,9 +5,9 @@ include $base .'\..\layout\menu.php';
  ?>
  <?php 
     if(isset($data["msg"])){
-        echo "Sucesso";
-    }
- ?>
+?>
+<div class="alert alert-success" role="alert"> Sucesso </div>
+  <?php } ?>
 <form action="/produto/salvar" method="POST"
  class="form-control">
     <label> Nome Produto </label>

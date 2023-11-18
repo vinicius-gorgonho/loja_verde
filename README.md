@@ -20,11 +20,11 @@
 9. [x] Criar o ProdutoController (Controla as operações de Produto)
    1. [x] Criar a Index (View)
    2. [x] Cria o Menu (Layout)
-   3. [ ] Criar Views de Produto
+   3. [x] Criar Views de Produto
    4. [x] Cadastrar Produto
    5. [x] Index Produto (Listar Produto)
-   6. [ ] Editar Produto
-10. [ ] Funcionalidade Excluir Produto 
+   6. [x] Editar Produto
+10. [ ] Funcionalidade Excluir Produto [0.5]
 11. [ ] Cadastrar Usuário [0.5]
 12. [ ] Pesquisar Usuário [0.5]
 13. [ ] Alterar Usuário [0.5]
@@ -32,3 +32,5 @@
 15. [ ] Efetuar Login/Logout do Usuário [1.0]
 16. [ ] Listar Produtos Na página Inicial [1.0]
 17. [ ] Listar Produtos com Imagem [2.0]
+18. [ ] Adicionar o Modal de Confirmação de exclusão no projeto[1.0]
+19. [ ] Refatorar o ProdutoDAO com PreparedStatement ou PDO [1.0]

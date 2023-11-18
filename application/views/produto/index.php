@@ -12,6 +12,9 @@ include $base . '\..\layout\menu.php';
 <body>
     <h1> Listar Produtos </h1>
     <hr />
+    <?php if( isset($data['msg'])){ ?> 
+<div class="alert alert-danger" role="alert"> Sucesso </div>
+    <?php } ?>
     <p> <a href="/produto/cadastrar"> Adicionar Produto </a> </p>
     <table class="table">
         <thead>
@@ -32,6 +35,11 @@ include $base . '\..\layout\menu.php';
 <a href="/produto/iniciarEditar/<?= $produto->getCodigo() ?>">
     EDITAR
     </a>
+    <span><form action="/produto/deletar" method="post"> 
+<input type="hidden" value="<?= $produto->getCodigo() ?>" name="codigo" />
+        <input type="submit" value="X" />
+     </form> 
+    </span>
  </td>
         </tr>
             <?php } ?>
