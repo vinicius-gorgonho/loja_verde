@@ -18,13 +18,13 @@ class ProdutoDAO
         }
     }
 
-    public function salvar($produto)
+    public function salvar($produtos)
     {
         try {
-            $nome = $produto->getNome();
-            $marca = $produto->getMarca();
-            $preco = $produto->getPreco();
-            $imagem = $produto->getImagem();
+            $nome = $produtos->getNome();
+            $marca = $produtos->getMarca();
+            $preco = $produtos->getPreco();
+            $imagem = $produtos->getImagem();
 
             $stmt = $this->conexao->prepare("INSERT INTO produtos(nome, marca, preco, imagem) VALUES (:nome, :marca, :preco, :imagem)");
             $stmt->bindParam(':nome', $nome);
@@ -36,7 +36,7 @@ class ProdutoDAO
 
             return true;
         } catch (\PDOException $e) {
-            echo "Erro ao salvar produto: " . $e->getMessage();
+            echo "Erro ao salvar produtos: " . $e->getMessage();
             return false;
         }
     }
@@ -48,9 +48,9 @@ class ProdutoDAO
             $produtos = [];
 
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-                $produto = new Produto($row["nome"], $row["marca"], $row["preco"], $row["imagem"]);
-                $produto->setCodigo($row["codigo"]);
-                array_push($produtos, $produto);
+                $produtos = new produtos($row["nome"], $row["marca"], $row["preco"], $row["imagem"]);
+                $produtos->setCodigo($row["codigo"]);
+                array_push($produtos[], $produtos);
             }
 
             return $produtos;
@@ -69,24 +69,24 @@ class ProdutoDAO
 
             $row = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-            $produto = new Produto($row["nome"], $row["marca"], $row["preco"], $row["imagem"]);
-            $produto->setCodigo($row["codigo"]);
+            $produtos = new produtos($row["nome"], $row["marca"], $row["preco"], $row["imagem"]);
+            $produtos->setCodigo($row["codigo"]);
 
-            return $produto;
+            return $produtos;
         } catch (\PDOException $e) {
             echo "Erro ao recuperar produto por ID: " . $e->getMessage();
             return null;
         }
     }
 
-    public function atualizar($produto)
+    public function atualizar($produtos)
     {
         try {
-            $codigo = $produto->getCodigo();
-            $nome = $produto->getNome();
-            $marca = $produto->getMarca();
-            $preco = $produto->getPreco();
-            $imagem = $produto->getImagem();
+            $codigo = $produtos->getCodigo();
+            $nome = $produtos->getNome();
+            $marca = $produtos->getMarca();
+            $preco = $produtos->getPreco();
+            $imagem = $produtos->getImagem();
 
             $stmt = $this->conexao->prepare("UPDATE produtos SET nome = :nome, marca = :marca, preco = :preco, imagem = :imagem WHERE codigo = :codigo");
             $stmt->bindParam(':nome', $nome);
@@ -99,8 +99,8 @@ class ProdutoDAO
 
             return $this->findById($codigo);
         } catch (\PDOException $e) {
-            echo "Erro ao atualizar produto: " . $e->getMessage();
-            return $produto;
+            echo "Erro ao atualizar produtos: " . $e->getMessage();
+            return $produtos;
         }
     }
 
@@ -113,7 +113,7 @@ class ProdutoDAO
 
             return true;
         } catch (\PDOException $e) {
-            echo "Erro ao deletar produto: " . $e->getMessage();
+            echo "Erro ao deletar produtos: " . $e->getMessage();
             return false;
         }
     }

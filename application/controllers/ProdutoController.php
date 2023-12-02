@@ -3,7 +3,7 @@
 
 use Application\core\Controller;
 use Application\dao\ProdutoDAO;
-use Application\models\Produto;
+use Application\models\produtos;
 
 class ProdutoController extends Controller
 {
@@ -26,12 +26,12 @@ class ProdutoController extends Controller
         $preco = $_POST['preco'];
         $imagem = $_POST['imagem'];
         // COMO CONSTRUIR UM OBJETO PRODUTO AQUI
-        $produto = new Produto($nome, $marca, $preco, $imagem);
+        $produto = new produtos ($nome, $marca, $preco, $imagem);
 
         $produtoDAO = new ProdutoDAO();
         $produtoDAO->salvar($produto);
 
-        $this->view('produto/cadastrar', ["cdpr" => "Produto criado com Sucesso!"]);
+        $this->view('produto/cadastrar', ["cdpr" => "produto criado com Sucesso!"]);
 
     }
 
@@ -54,7 +54,7 @@ class ProdutoController extends Controller
         $imagem = filter_input(INPUT_POST, "imagem");
 
         //CRIA O OBJETO
-        $produto = new Produto($nome, $marca, $preco, $imagem);
+        $produto = new produtos($nome, $marca, $preco, $imagem);
         $produto->setCodigo($codigo);
         //CRIA O PRODUTO DAO
         $produtoDAO = new ProdutoDAO();

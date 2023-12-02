@@ -15,9 +15,8 @@ public function __construct($nome, $marca,$preco,$imagem){
     public function setCodigo($codigo){
         $this->codigo = $codigo;
     }
-    public function getCodigo(){
-        return $this->codigo;
-    }
+   
+    public function getCodigo(){return $this->codigo;}
     public function getNome(){return $this->nome;}
 
     public function getMarca(){return $this->marca;}
