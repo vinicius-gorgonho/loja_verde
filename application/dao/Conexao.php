@@ -3,7 +3,7 @@ namespace Application\dao;
 class Conexao{
     private $dbName = "loja";
     private $usuario = "root";
-    private $senha = "Fatec@2022";
+    private $senha = "root";
     private $host = "localhost";
     // carrega a conexão realizada com banco
     private $conn;
@@ -13,7 +13,7 @@ $this->senha, $this->dbName);
     }
     public function getConexao(){
     if($this->conn->connect_error){
-die("A conexão falhou. ". $this->conn->connect_error);
+    die("A conexão falhou. ". $this->conn->connect_error);
     }
         return $this->conn;
     }
@@ -21,7 +21,4 @@ die("A conexão falhou. ". $this->conn->connect_error);
         $this->conn->close();
     }
 }
-
-
-
 ?>
